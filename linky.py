@@ -23,7 +23,6 @@ parser.add_argument("-o", "--output", metavar="", help="File to output to: Write
 parser.add_argument("-f", "--format", metavar="", help="Format for email addresses")
 args = parser.parse_args()
 
-
 if '.txt' in args.cookie:
 	if os.path.isfile(args.cookie):
 		try:
