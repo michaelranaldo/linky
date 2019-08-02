@@ -61,6 +61,12 @@ optional arguments:
 Usage
 =====
 
+When working with cookies, Linky accepts both file and string:
+
+```--cookie cookie.txt```
+OR
+```--cookie alongcookiestring```
+
 #### Get Employees
 
 ```python3 --cookie cookie.txt --company-id 1441 --domain google.com --output google_employees  --format 'firstname.surname'```
