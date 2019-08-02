@@ -1,3 +1,10 @@
+import os
+
+cur_dir=os.path.dirname(os.path.abspath(__file__))
+materialize_css=cur_dir+'/html/src/materialize.css'
+styles_css=cur_dir+'/html/src/styles.css'
+materialize_js=cur_dir+'/html/src/materialize.js'
+
 def header(title):
 	head='\n'
 	head+='<!DOCTYPE html>\n'
@@ -7,7 +14,7 @@ def header(title):
 	head+='<link rel="shortcut icon" type="image/png" href="https://pbs.twimg.com/profile_images/1141728503123107840/keugQMAi_400x400.jpg"/>\n'
 	head+='<title>%s</title>\n' % title
 
-	with open('lib/html/src/materialize.css','r') as f:
+	with open(materialize_css,'r') as f:
 		try:
 			x=f.readlines()
 			head+='<style>\n'
@@ -18,7 +25,7 @@ def header(title):
 		except:
 			pass
 
-	with open('lib/html/src/styles.css','r') as f:
+	with open(styles_css,'r') as f:
 		try:
 			x=f.readlines()
 			head+='<style>\n'
@@ -62,7 +69,7 @@ def table_picture(url,image):
 
 def footer():
 	foot=''
-	with open('lib/html/src/materialize.js','r') as f:
+	with open(materialize_js,'r') as f:
 		try:
 			x=f.readlines()
 			foot+='<script>\n'

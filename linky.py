@@ -23,14 +23,20 @@ parser.add_argument("-o", "--output", metavar="", help="File to output to: Write
 parser.add_argument("-f", "--format", metavar="", help="Format for email addresses")
 args = parser.parse_args()
 
-if os.path.isfile(args.cookie):
-	try:
-		with open(args.cookie,'r') as f:
-			cookie=f.readline()
-			logger.green('Got cookie: [%s]' % logger.GREEN(cookie))
-	except:
-		logger.red('Could not open'+args.cookie)
-		quit()
+
+if '.txt' in args.cookie:
+	if os.path.isfile(args.cookie):
+		try:
+			with open(args.cookie,'r') as f:
+				cookie=f.readline()
+				logger.green('Got cookie: [%s]' % logger.GREEN(cookie))
+		except:
+			logger.red('Could not open'+args.cookie)
+			quit()
+	else:
+		cookie=args.cookie
+		logger.green('Got cookie: [%s]' % logger.GREEN(cookie))
+
 else:
 	cookie=args.cookie
 

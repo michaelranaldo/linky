@@ -2,12 +2,15 @@ from time import gmtime, strftime
 from lib import html
 import pandas as pd
 import csv, json
+import os
 
 colour_red = "\033[1;31m"
 colour_blue = "\033[1;34m"
 colour_green = "\033[1;32m"
 colour_yellow = "\033[1;33m"
 colour_remove= "\033[0m"
+cur_dir=os.path.dirname(os.path.abspath(__file__))
+
 
 def RED(string):
 	string=str(string)
@@ -60,7 +63,7 @@ def write_csv(data,domain,word_occurrence,filename):
 				profile_url=v[0]
 				picture=v[1]
 				if picture == None:
-					picture='lib/html/src/blank.jpg'
+					picture=cur_dir+'/html/src/blank.jpg'
 				firstname=v[2]
 				middlename=v[3]
 				surname=v[4]

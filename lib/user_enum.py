@@ -7,6 +7,9 @@ def get_company_profile(cookie,company_id,keyword):
 	else:
 		url = "https://www.linkedin.com/voyager/api/search/cluster?count=40&guides=List(v->PEOPLE,facetCurrentCompany->%s)&keywords=%s&origin=OTHER&q=guided&start=0" % (company_id,keyword)
 	data=http.connect(url,cookie)
+	if data == None:
+		logger.red('Unable to authenticate to LinkedIn')
+		quit()
 	return data.text
 
 def extract_data(data,domain,email_format):
@@ -140,7 +143,6 @@ def run(data,domain,filename,keyword):
 		pages=1
 	logger.blue('Identified %s page(s)' % logger.BLUE(pages))
 	logger.blue('Identified %s result(s)' % logger.BLUE(results))
-	quit()
 
 	if pages == 0:
 		logger.red('Could not identify pages')
