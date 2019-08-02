@@ -11,7 +11,6 @@ colour_yellow = "\033[1;33m"
 colour_remove= "\033[0m"
 cur_dir=os.path.dirname(os.path.abspath(__file__))
 
-
 def RED(string):
 	string=str(string)
 	return (colour_red + string + colour_remove)

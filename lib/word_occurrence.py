@@ -25,3 +25,4 @@ def count(data):
 		logger.red('Couldnt identify common role types')
 
 	return role_data
+	

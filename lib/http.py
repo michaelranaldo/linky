@@ -17,3 +17,4 @@ def connect(url,cookie):
 		logger.red(error)
 		logger.red('Check the cookie and make sure its correct!')
 		return None
+		

@@ -3,9 +3,6 @@ import re
 
 def names(name_data):
 
-	# firstname=name_data[0]
-	# surname=name_data[1]
-
 	surname_split = name_data[1].split()
 
 	firstname = name_data[0]

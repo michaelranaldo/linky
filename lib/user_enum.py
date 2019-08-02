@@ -156,3 +156,4 @@ def run(data,domain,filename,keyword):
 	logger.write_out(users,domain,job_role_count,filename)
 	
 	return users
+	
